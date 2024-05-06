@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iFRAME only</title>
+</head>
+<body style="background-color:rgb(222,222,222);">
+    <h1>This is the framed window</h1>
+
+    <script type="text/javascript">
+
+      document.addEventListener("visibilitychange", visChngF);
+      function visChngF() {
+        if (document.hidden) {
+            top.console.log("Msg from frame:\nvisibilitychange says: USER IS GONE FROM FRAME");
+        } else {
+            top.console.log("Msg from frame:\nvisibilitychange says: USER HAS COME BACK TO FRAME");
+        }
+      }
+
+      window.addEventListener('blur', blurHappenedF);
+      function blurHappenedF() {
+        top.console.log("Msg from frame:\nblur says: USER IS OUT OF FRAME");
+      }
+
+      window.addEventListener('focus', focusHappenedF);
+      function focusHappenedF() {
+        top.console.log("Msg from frame:\nfocus says: USER IS IN FRAME");
+      }
+
+
+    </script>
+
+
+</body>
+</html>
