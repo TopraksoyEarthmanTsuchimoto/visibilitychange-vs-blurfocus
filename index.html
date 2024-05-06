@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARENT AND FRAME</title>
+    <style media="screen">
+      a{ text-decoration: none; color: lightskyblue; }
+      a:hover{ color: lightsalmon; }
+      a:active { color: darkturquoise; }
+      a:visited { color: lightskyblue; }
+      h5{color: lightsteelblue;}
+      h4{color: steelblue;}
+    </style>
+</head>
+<body>
+    <h4>Testing <li>document » visibilitychange</li> versus <li>window » blur/focus</li></h4>
+    <h5>Watch your browser's console as you navigate around</h5>
+    <h1>This is the parent window</h1>
+    <iframe src="/frame.html" width="333" height="222" style="border:1;" allowfullscreen="" loading="lazy"></iframe>
+    <br><br>
+    <h5>Start enhancing your personal <strong>i18n!</strong> <br>Use <a href="https://speakworldlanguages.app" target="_blank">speakworldlanguages.app</a></h5>
+    <script type="text/javascript">
+
+      document.addEventListener("visibilitychange", visChngF);
+      function visChngF() {
+        if (document.hidden) {
+            console.log("Msg from parent:\nUSER IS GONE FROM PARENT according to visibilitychange in parent");
+        } else {
+            console.log("Msg from parent:\nUSER HAS COME BACK TO PARENT according to visibilitychange in parent");
+        }
+      }
+
+      window.addEventListener('blur', blurHappenedF);
+      function blurHappenedF() {
+        console.log("Msg from parent:\nUSER IS NOW AWAY FROM PARENT: reported via blur event in parent");
+      }
+
+      window.addEventListener('focus', focusHappenedF);
+      function focusHappenedF() {
+        console.log("Msg from parent:\nUSER IS NOW HERE IN PARENT: reported via focus event in parent");
+      }
+
+    </script>
+
+
+</body>
+</html>
