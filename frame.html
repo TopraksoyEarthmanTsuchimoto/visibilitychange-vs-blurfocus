@@ -13,20 +13,20 @@
       document.addEventListener("visibilitychange", visChngF);
       function visChngF() {
         if (document.hidden) {
-            top.console.log("Msg from frame:\nUSER IS GONE FROM FRAME: Detected by visibilitychange event");
+            top.console.log("Msg from frame:\nUSER IS GONE FROM FRAME: Detected by visibilitychange event in frame");
         } else {
-            top.console.log("Msg from frame:\nUSER HAS COME BACK TO FRAME: Detected by visibilitychange event");
+            top.console.log("Msg from frame:\nUSER HAS COME BACK TO FRAME: Detected by visibilitychange event in frame");
         }
       }
 
       window.addEventListener('blur', blurHappenedF);
       function blurHappenedF() {
-        top.console.log("Msg from frame:\nUSER IS OUT OF FRAME: Detected by blur event");
+        top.console.log("Msg from frame:\nUSER IS OUT OF FRAME: Detected by blur event in frame");
       }
 
       window.addEventListener('focus', focusHappenedF);
       function focusHappenedF() {
-        top.console.log("Msg from frame:\nUSER IS IN FRAME: Detected by focus event");
+        top.console.log("Msg from frame:\nUSER IS IN FRAME: Detected by focus event in frame");
       }
 
 
