@@ -6,27 +6,27 @@
     <title>iFRAME only</title>
 </head>
 <body style="background-color:rgb(222,222,222);">
-    <h1>This is the framed window</h1>
+    <h1>Try clicking inside this framed window. And then click somewhere outside it again. </h1>
 
     <script type="text/javascript">
 
       document.addEventListener("visibilitychange", visChngF);
       function visChngF() {
         if (document.hidden) {
-            top.console.log("Msg from frame:\nvisibilitychange says: USER IS GONE FROM FRAME");
+            top.console.log("Msg from frame:\nUSER IS GONE FROM FRAME: Detected by visibilitychange event");
         } else {
-            top.console.log("Msg from frame:\nvisibilitychange says: USER HAS COME BACK TO FRAME");
+            top.console.log("Msg from frame:\nUSER HAS COME BACK TO FRAME: Detected by visibilitychange event");
         }
       }
 
       window.addEventListener('blur', blurHappenedF);
       function blurHappenedF() {
-        top.console.log("Msg from frame:\nblur says: USER IS OUT OF FRAME");
+        top.console.log("Msg from frame:\nUSER IS OUT OF FRAME: Detected by blur event");
       }
 
       window.addEventListener('focus', focusHappenedF);
       function focusHappenedF() {
-        top.console.log("Msg from frame:\nfocus says: USER IS IN FRAME");
+        top.console.log("Msg from frame:\nUSER IS IN FRAME: Detected by focus event");
       }
 
 
